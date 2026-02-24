@@ -81,15 +81,30 @@ nav {
 /* ===============================
    HERO SECTION
 ================================= */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
 
+    background: radial-gradient(
+        circle at center,
+        rgba(243, 181, 200, 0.589) 0%,
+        rgba(255, 240, 245, 0.2) 40%,
+        transparent 70%
+    );
+
+    pointer-events: none;
+    z-index: -1;
+}
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    position: relative;
 
-    background: radial-gradient(circle at center, #ffe4ec 0%, #fff0f5 60%);
 }
 
 .hero h2 {
@@ -216,13 +231,15 @@ footer {
 ================================= */
 
 .particles span {
-    position: absolute;
+    position: fixed;
     width: 10px;
     height: 10px;
     background: #f8cdda;
     border-radius: 50%;
     opacity: 0.6;
     animation: float 10s linear infinite;
+    pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes float {
