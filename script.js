@@ -101,3 +101,30 @@ window.addEventListener("scroll", () => {
     heroName.style.transform = `scale(${1 - scrollValue / 2000})`;
 
 });
+
+/* ===============================
+   HEADER OVERLAPING SOLUTION
+================================= */
+// Dynamically set scroll-margin-top to anchor targets based on header height
+function updateScrollMargin() {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    // Get header height (including padding/border)
+    const headerHeight = header.getBoundingClientRect().height;
+
+    // Set CSS variable on root for potential CSS use
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+
+    // Select all elements with IDs (likely anchor targets)
+    const anchorTargets = document.querySelectorAll('[id]');
+
+    anchorTargets.forEach(el => {
+        // Apply scroll-margin-top equal to header height + a small offset (8px for breathing room)
+        el.style.scrollMarginTop = `${headerHeight + 8}px`;
+    });
+}
+
+// Run on page load and on resize
+window.addEventListener('load', updateScrollMargin);
+window.addEventListener('resize', updateScrollMargin);

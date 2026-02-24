@@ -23,11 +23,6 @@ body {
     cursor: none; /* Hide default cursor */
 }
 
-/*Fixed overlaping header to titles*/
-section{
-    scroll-margin-top: 100px;
-}
-
 /* Accent handwritten titles */
 .section-title, .logo {
     font-family: 'Dancing Script', cursive;
@@ -282,10 +277,6 @@ footer {
 ================================= */
 
 @media (max-width: 768px) {
-
-    section {
-        scroll-margin-top: 160px;
-    }
 
     nav {
         flex-direction: column;
