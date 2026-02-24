@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+/* html */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body styling */
 body {
     font-family: 'Playfair Display', serif;
