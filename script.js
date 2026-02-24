@@ -1,0 +1,74 @@
+/* ===============================
+   PROJECT EXPAND ON CLICK
+================================= */
+
+// Select all toggle buttons
+const toggleButtons = document.querySelectorAll(".toggle-btn");
+
+toggleButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        // Get the parent project card
+        const card = button.closest(".project-card");
+
+        // Toggle active class
+        card.classList.toggle("active");
+
+        // Change button text
+        button.textContent = 
+            card.classList.contains("active") 
+            ? "Hide Details" 
+            : "View Details";
+    });
+});
+
+
+/* ===============================
+   SCROLL FADE-IN ANIMATION
+================================= */
+
+// Select all elements with fade-in class
+const faders = document.querySelectorAll(".fade-in");
+
+// Observer for detecting when elements enter viewport
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.2 });
+
+faders.forEach(el => observer.observe(el));
+
+
+/* ===============================
+   CUSTOM CURSOR
+================================= */
+
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+
+/* ===============================
+   FLOATING PARTICLES GENERATOR
+================================= */
+
+const particleContainer = document.querySelector(".particles");
+
+// Create 30 floating particles
+for (let i = 0; i < 30; i++) {
+    const particle = document.createElement("span");
+
+    // Random horizontal position
+    particle.style.left = Math.random() * 100 + "vw";
+
+    // Random animation duration
+    particle.style.animationDuration = (5 + Math.random() * 10) + "s";
+
+    particleContainer.appendChild(particle);
+}
