@@ -72,3 +72,32 @@ for (let i = 0; i < 30; i++) {
 
     particleContainer.appendChild(particle);
 }
+
+/* ===============================
+   HEADER NAME APPEARS ON SCROLL
+================================= */
+
+const headerLogo = document.querySelector(".header-logo");
+const heroSection = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+
+    // When scroll passes 60% of hero height
+    if (window.scrollY > heroSection.offsetHeight * 0.6) {
+        headerLogo.classList.add("visible");
+    } else {
+        headerLogo.classList.remove("visible");
+    }
+
+});
+
+const heroName = document.querySelector(".hero-name");
+
+window.addEventListener("scroll", () => {
+
+    let scrollValue = window.scrollY;
+
+    // Shrinks slightly as you scroll
+    heroName.style.transform = `scale(${1 - scrollValue / 2000})`;
+
+});
