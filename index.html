@@ -55,7 +55,7 @@
     <section id="about" class="section fade-in">
         <h2 class="section-title">About Me</h2>
         <div class="about-text">
-            <p class="first-child">
+            <p>
                 I'm a <strong>Systems Analysis Technician</strong> based in Buenos Aires City, Argentina.
                 <br>
                 Focused on building efficient, scalable, and user-centered solutions.
@@ -71,7 +71,10 @@
                 and <strong>transforming</strong> complexity into clarity is <strong>my main goal</strong>. 
             </p>
 
-            <p><strong>Always learning, always evolving.</strong> Don't let the pink and cursive fool you.</p>
+            <p>
+                <strong>Always learning, always evolving.</strong> 
+                <span class="about-highlight">Don't let the pink fool you</span>
+            </p>
 
         </div>
     </section>
@@ -81,54 +84,77 @@
         <h2 class="section-title">Projects</h2>
 
         <!-- Project Cards -->
-        <div class="project-card">
-            <div class="project-header">
-                <h3>Project Title</h3>
-                <button class="toggle-btn">View Details</button>
-            </div>
-            <div class="project-content">
-                <p>
-                    descripcion del proyecto
-                </p>
-                <a href="#" target="_blank">Live Demo</a> <!--acordarme de agregar urls-->
-                <a href="#" target="_blank">GitHub</a> <!--acordarme de agregar urls-->
-            </div>
-        </div>
-        
+        <div class="projects-container">
 
-        <div class="project-card">
-            <div class="project-header">
-                <h3>Personal Portfolio</h3>
-                <button class="toggle-btn">View Details</button>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Project Title</h3>
+                    <button class="toggle-btn">View Details</button>
+                </div>
+                <div class="project-content">
+                    <p>
+                        descripcion del proyecto
+                    </p>
+                    <a href="#" target="_blank">Live Demo</a> <!--acordarme de agregar urls-->
+                    <a href="#" target="_blank">GitHub</a> <!--acordarme de agregar urls-->
+                </div>
             </div>
-            <div class="project-content">
-                <p>
-                    <strong>You are looking at it right now!</strong>
-                    <br>
-                    But if you want to go check out the repository:
-                </p>
-                <a href="#" target="_blank">GitHub</a> <!--acordarme de agregar urls-->
-            </div>
-        </div>        
+            
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Personal Portfolio</h3>
+                    <button class="toggle-btn">View Details</button>
+                </div>
+                <div class="project-content">
+                    <p>
+                        <strong>You are looking at it right now!</strong>
+                        <br>
+                        But if you want to go check out the repository:
+                    </p>
+                    <a href="#" target="_blank">GitHub</a> <!--acordarme de agregar urls-->
+                </div>
+            </div>        
+
+        </div>
 
     </section>
 
     <!-- SKILLS SECTION -->
     <section id="skills" class="section fade-in">
         <h2 class="section-title">Skills</h2>
-        <ul class="skills-list">
-            <li>JavaScript</li>
-            <li>UX/UI Design</li>
-            <li>Creativity</li>
-            <li>Java</li>
-            <li>SQL</li>
-            <li>Git & Github</li>
-            <li>Problem Solving</li>
-            <li>AI Prompting</li>
-            <li>Teamwork</li>
-            <li>HTML</li>
-            <li>CSS</li>
-        </ul>
+
+        <div class="skills-container">
+            <div class="skills-category">
+                    <h3>Technical</h3>
+                    <ul class="skills-list">
+                        <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>Git & Github</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+
+            <div class="skills-category">
+                <h3>Professional</h3>
+                    <ul class="skills-list">
+                        <li>UX/UI Design</li>
+                        <li>Creativity</li>
+                        <li>
+                            <span class="tooltip">
+                                Problem Solving
+                                <span class="tooltip-text">
+                                    My favourite part of coding
+                                </span>
+                            </span>
+                        </li>
+                        <li>AI Prompting</li>
+                        <li>Teamwork</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!--EXPERIENCE SECTION-->
@@ -145,6 +171,7 @@
             </p>
 
             <p>
+                <br><br>
                 <strong>Census Registry Assistant</strong> (Oct - Nov 2022)<br>
                 During high school, I worked at a census registry center where I collaborated 
                 in reviewing and correcting large volumes of data entries. 
@@ -158,7 +185,7 @@
     <!-- STUDIES SECTION -->
     <section id="studies" class="section fade-in">
         <h2 class="section-title">Studies</h2>
-        <p>estudios col y row</p>
+        <p>estudios grid</p>
     </section>
 
     <!-- CONTACT SECTION -->

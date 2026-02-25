@@ -53,6 +53,19 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.top = e.clientY + "px";
 });
 
+/*cursor interaction instead of going pointer*/
+const interactiveElements = document.querySelectorAll("a, button, .toggle-btn, .tooltip");
+
+interactiveElements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover");
+    });
+
+    el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover");
+    });
+});
+
 
 /* ===============================
    FLOATING PARTICLES GENERATOR
