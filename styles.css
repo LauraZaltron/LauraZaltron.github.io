@@ -26,6 +26,8 @@ body {
 /* Accent handwritten titles */
 .section-title, .logo {
     font-family: 'Dancing Script', cursive;
+    padding-bottom: 20px;
+    font-size: 30px;
 }
 
 /* Section layout */
@@ -189,6 +191,31 @@ nav {
     background: #f5a9c4;
 }
 
+
+/* ===============================
+   ABOUT
+================================= */
+.about-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6a5560;
+    justify-content: flex-start;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.about-text p:first-child {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #d48ca7;
+}
+
+
 /* ===============================
    SKILLS
 ================================= */
@@ -206,6 +233,25 @@ nav {
     padding: 10px 20px;
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(255, 192, 203, 0.3);
+}
+
+/* ===============================
+   experience
+================================= */
+
+.experience-text{
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6a5560;
+    text-align: justify;
+    justify-content: flex-start;
+}
+
+.experience-text p {
+    margin-bottom: 20px;
+    font-weight: 400;
 }
 
 /* ===============================
