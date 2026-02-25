@@ -2,15 +2,13 @@
    GLOBAL STYLES
 ================================= */
 
-/* Reset default spacing */
+/* Reset default spacing & modify cursor*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none !important;
+    cursor: none !important; 
 }
-
-/*removes ugly default cursor*/
 
 /* html */
 html {
@@ -73,13 +71,15 @@ a {
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.4s ease;
+    margin-bottom: -20px; /*trying to fix position*/
     pointer-events: none;
 }
+
 /*When scrolled*/
 .header-logo.visible{
     opacity: 1;
     transform: translateY(0);
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 header {
@@ -148,8 +148,6 @@ nav {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    position: relative;
-
 }
 
 .hero h2 {
@@ -160,6 +158,7 @@ nav {
 .hero p {
     font-size: 1.2rem;
     margin-top: 10px;
+    text-align: center;
 }
 
 /* ===============================
@@ -308,12 +307,8 @@ nav {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     
-    background: linear-gradient(
-    145deg,
-    #d48ca7,
-    #b76b87
-    );
-    color: #ffffff;
+    background: #f5a9c4;
+    color: #5e4b56;
     
     padding: 10px 14px;
     border-radius: 12px;
@@ -322,7 +317,7 @@ nav {
     width: 220px;
     text-align: center;
 
-    box-shadow: 0 10px 25px rgba(161, 161, 161, 0.15);
+    box-shadow: 0 10px 25px rgba(161, 161, 161, 0.459);
     backdrop-filter: blur(6px);
 
     opacity: 0;
@@ -340,7 +335,7 @@ nav {
     
     border-width: 6px;
     border-style: solid;
-    border-color: #b76b87 transparent transparent transparent;
+    border-color: #d894ad transparent transparent transparent;
 }
 
 .tooltip:hover{
@@ -469,10 +464,10 @@ footer {
     }
 
     .section {
-        padding: 60px 5%;
+        padding: 20px 5%;
     }
 
-        .skills-container {
+    .skills-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
