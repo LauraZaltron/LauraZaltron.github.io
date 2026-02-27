@@ -49,9 +49,14 @@ body {
     border-radius: 2px;
 }
 
+.section-title.visible::after { /*Mobile warmth when scrolled*/
+    width: 60%;
+    transition: width 0.6s ease;
+}
+
 /* Section layout */
 .section {
-    padding: 20px;
+    padding: 90px 8% 70px;
     margin-bottom: 0px;
     text-align: center;
 }
@@ -136,9 +141,32 @@ nav {
 }
 
 .hero-name {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-family: 'Dancing Script', cursive;
-    transition: transform 0.2s ease;
+    text-align: center;
+    padding-left: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #d48ca7 0%,
+        #5e4b56 25%,
+        #a37891 50%,
+        #5e4b56 75%,
+        #d48ca7 100%
+    );
+
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero {
@@ -159,6 +187,7 @@ nav {
     font-size: 1.2rem;
     margin-top: 10px;
     text-align: center;
+    padding: 10px;
 }
 
 /* ===============================
@@ -184,16 +213,50 @@ nav {
     color: #d48ca7;
 }
 
+
 .about-highlight {
     display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
-    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
 }
 
-.about-highlight:hover {
-    transform: scale(1.025);
-    color: #b76b87;
+/* When it scrolls into view */
+.about-highlight.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: glowOnce 3.8s ease-out forwards;
 }
+
+@keyframes glowOnce {
+
+    0% {
+        text-shadow: 0 0 0px rgba(212, 140, 167, 0);
+        transform: translateY(5px) scale(0.98);
+    }
+
+    40% {
+        text-shadow:
+            0 0 8px rgba(212, 140, 167, 0.6),
+            0 0 16px rgba(212, 140, 167, 0.4);
+        transform: translateY(-2px) scale(1.03);
+    }
+
+    100% {
+        text-shadow: 0 0 4px rgba(212, 140, 167, 0.3);
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hover effect */
+.about-highlight:hover {
+    transform: translateY(-3px) scale(1.03);
+    color: #c75e84;
+    text-shadow: 0 0 8px rgba(212, 140, 167, 0.5);
+    transition:         transform 0.3s ease,
+        color 0.3s ease,
+        text-shadow 0.3s ease;;
+}
+
 
 /* ===============================
    PROJECTS
@@ -208,6 +271,13 @@ nav {
     max-width: 600px;
     box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
     transition: 0.4s;
+}
+
+/*Mobile movement*/
+.project-card:active,
+.skills-category:active,
+.toggle-btn:active {
+    transform: scale(0.97);
 }
 
 .project-card:hover {
@@ -422,8 +492,8 @@ footer {
 
 .particles span {
     position: fixed;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: #f8cdda;
     border-radius: 50%;
     opacity: 0.6;
@@ -442,10 +512,41 @@ footer {
 }
 
 /* ===============================
+   SCROLL IN PC
+================================= */
+
+/* Width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track (background area) */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Scroll thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background: rgba(212, 140, 167, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #b76b87;
+}
+
+
+/* ===============================
    RESPONSIVE DESIGN
 ================================= */
 
 @media (max-width: 768px) {
+
+    .custom-cursor{
+        display: none;
+    }
 
     nav {
         flex-direction: column;

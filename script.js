@@ -37,6 +37,9 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add("visible");
         }
     });
+    document.querySelectorAll(".about-highlight").forEach(el => {
+    observer.observe(el);
+});
 }, { threshold: 0.2 });
 
 faders.forEach(el => observer.observe(el));
@@ -45,7 +48,7 @@ faders.forEach(el => observer.observe(el));
 /* ===============================
    CUSTOM CURSOR
 ================================= */
-
+if (window.matchMedia("(pointer: fine)").matches) {
 const cursor = document.querySelector(".custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -65,7 +68,7 @@ interactiveElements.forEach(el => {
         cursor.classList.remove("hover");
     });
 });
-
+}
 
 /* ===============================
    FLOATING PARTICLES GENERATOR
